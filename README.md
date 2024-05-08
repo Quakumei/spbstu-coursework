@@ -1,4 +1,4 @@
-# SPbSTU "Software Engineering" - 2022-2025
+# SPbSTU "Software Engineering" - 2021-2025
 
 This repository is a collection of my coursework during bachelor's degree at [SPbSTU](https://www.spbstu.ru/). 
 
