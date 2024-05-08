@@ -1,3 +1,6 @@
 [submodule "3/rust-secret-santa-service"]
 	path = 3/rust-secret-santa-service
 	url = https://github.com/cysh-babai-church/secret-santa-service.git
+[submodule "5/5/smart-lampa-cv"]
+	path = 5/5/smart-lampa-cv
+	url = https://github.com/Quakumei/smart-lampa-cv.git
