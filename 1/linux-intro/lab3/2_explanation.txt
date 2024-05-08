@@ -1,0 +1,5 @@
+0 - STDIN
+1 - STDOUT , there fore 2>&1 is pushing errors in stdout
+2 - STDERR  , therefore  2>  for errors
+
+ls -y > logfile 2>&1  will put error message to logfile as 2>&1 redirects stderr to stdout which in its place is redirectd to logfile

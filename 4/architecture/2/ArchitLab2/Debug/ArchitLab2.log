@@ -1,0 +1,7 @@
+﻿  ArchitLab2.cpp
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(92,10): error C2040: 'result': '__m128i' differs in levels of indirection from 'double [2]'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(92,19): error C3861: '_mm_paddsb_epi8': identifier not found
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(96,18): error C2065: 'int8_t': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(96,25): error C2146: syntax error: missing ')' before identifier '_mm_extract_epi8'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(96,25): error C2146: syntax error: missing ';' before identifier '_mm_extract_epi8'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(96,52): error C2059: syntax error: ')'

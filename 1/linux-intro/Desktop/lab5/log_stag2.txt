@@ -1,0 +1,38 @@
+Compiling test_my.c with -O2 -march=native -funroll-loops -flto -fipa-sra -fipa-pta -fipa-cp -fipa-cp-clone -fipa-bit-cp...
+Successful!
+Size:
+20	test_my.c.test.out.d/0-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.157s
+user	0m5.156s
+sys	0m0.001s
+
+Compiling test_my.c with -O2 -march=native -funroll-loops -fprofile-use...
+test_my.c: In function ‘main’:
+test_my.c:20:1: warning: ‘/home/druzhelubnyy/Desktop/lab5/test_my.gcda’ profile count data file not found [-Wmissing-profile]
+   20 | }
+      | ^
+Successful!
+Size:
+20	test_my.c.test.out.d/1-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.102s
+user	0m5.102s
+sys	0m0.000s
+
+Compiling test_my.c with -O2 -march=native -funroll-loops -fprofile-generate...
+Successful!
+Size:
+28	test_my.c.test.out.d/2-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.400s
+user	0m5.399s
+sys	0m0.000s
+
+Conclusion: -O2 -march=native -funroll-loops -fprofile-use

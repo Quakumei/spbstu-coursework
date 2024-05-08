@@ -1,0 +1,75 @@
+image: 'volgarenok/cxx-test:0.0.17'
+stages:
+  - sanity
+  - build
+  - test
+
+before_script:
+  - echo "Using test case timeout $TIMEOUT sec"
+
+author:
+  stage: sanity
+  script:
+    - '"$TEST_DIR"/validate-student.sh'
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+      
+branch:
+  stage: sanity
+  script:
+    - '"$TEST_DIR"/validate-branch.sh'
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+content:
+  stage: sanity
+  script:
+    - '"$TEST_DIR"/validate-files.sh'
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+build:
+  stage: build
+  script:
+    - '"$TEST_DIR"/build.sh'
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+  artifacts:
+    paths:
+      - out
+    expire_in: 1 year
+
+acceptance:
+  stage: test
+  script:
+    - 'if test -d out ; then find out -type f -exec touch {} + ; fi'
+    - '"$TEST_DIR"/acceptance-tests.sh'
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+  dependencies:
+    - build
+  artifacts:
+    paths:
+      - out/*/*/acceptance.*
+    expire_in: 1 year
+    when: always

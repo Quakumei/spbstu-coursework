@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -ihEo "(?<=[ (:]|^)([a-z])((([a-z0-9]+\-?[a-z0-9]+)\.)+)*([a-z0-9]+\-?[a-z0-9]+)@([a-z0-9]+\-?[a-z0-9]+\.)+[a-z0-9]+\-?[a-z0-9]+(?=[\. ,:)]|$)" $HOME/Desktop/spo/lab2/hw1/email_db/* | sort | uniq -i > allemails.lst

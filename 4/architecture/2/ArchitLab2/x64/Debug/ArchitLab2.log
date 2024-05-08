@@ -1,0 +1,70 @@
+﻿  ArchitLab2.cpp
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(15,2): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(16,3): error C2065: 'movq': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(16,8): error C2146: syntax error: missing ';' before identifier 'mm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(16,8): error C2065: 'mm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(17,3): error C2146: syntax error: missing ';' before identifier 'movq'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(17,3): error C2065: 'movq': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(17,8): error C2146: syntax error: missing ';' before identifier 'mm1'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(17,8): error C2065: 'mm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(18,3): error C2146: syntax error: missing ';' before identifier 'pcmpeqb'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(18,3): error C2065: 'pcmpeqb': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(18,11): error C2146: syntax error: missing ';' before identifier 'mm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(18,11): error C2065: 'mm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(18,16): error C2065: 'mm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(19,3): error C2146: syntax error: missing ';' before identifier 'movq'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(19,3): error C2065: 'movq': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(19,8): error C2146: syntax error: missing ';' before identifier 'qw1'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(19,13): error C2065: 'mm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(20,2): error C2143: syntax error: missing ';' before '}'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(27,2): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(28,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(28,10): error C2146: syntax error: missing ';' before identifier 'xmm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(28,10): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(29,3): error C2146: syntax error: missing ';' before identifier 'movups'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(29,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(29,10): error C2146: syntax error: missing ';' before identifier 'xmm1'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(29,10): error C2065: 'xmm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(30,3): error C2146: syntax error: missing ';' before identifier 'addps'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(30,3): error C2065: 'addps': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(30,9): error C2146: syntax error: missing ';' before identifier 'xmm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(30,9): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(30,15): error C2065: 'xmm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(31,3): error C2146: syntax error: missing ';' before identifier 'movups'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(31,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(31,10): error C2146: syntax error: missing ';' before identifier 'c'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(31,13): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(32,2): error C2143: syntax error: missing ';' before '}'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(38,2): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(39,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(39,10): error C2146: syntax error: missing ';' before identifier 'xmm1'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(39,10): error C2065: 'xmm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(40,3): error C2146: syntax error: missing ';' before identifier 'sqrtpd'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(40,3): error C2065: 'sqrtpd': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(40,10): error C2146: syntax error: missing ';' before identifier 'xmm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(40,10): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(40,16): error C2065: 'xmm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(41,3): error C2146: syntax error: missing ';' before identifier 'movups'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(41,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(41,10): error C2146: syntax error: missing ';' before identifier 'f'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(41,13): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(42,2): error C2143: syntax error: missing ';' before '}'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(44,2): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(45,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(45,10): error C2146: syntax error: missing ';' before identifier 'xmm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(45,10): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(46,3): error C2146: syntax error: missing ';' before identifier 'movups'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(46,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(46,10): error C2146: syntax error: missing ';' before identifier 'xmm1'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(46,10): error C2065: 'xmm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(47,3): error C2146: syntax error: missing ';' before identifier 'pminub'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(47,3): error C2065: 'pminub': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(47,10): error C2146: syntax error: missing ';' before identifier 'xmm0'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(47,10): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(47,16): error C2065: 'xmm1': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(48,3): error C2146: syntax error: missing ';' before identifier 'movups'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(48,3): error C2065: 'movups': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(48,10): error C2146: syntax error: missing ';' before identifier 'a128'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(48,16): error C2065: 'xmm0': undeclared identifier
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(49,2): error C2143: syntax error: missing ';' before '}'
+S:\_workspace\third-semester\ArchitectureSemester\ArchitLab2\ArchitLab2\ArchitLab2.cpp(60,2): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.

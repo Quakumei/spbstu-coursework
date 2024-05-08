@@ -1,0 +1,3 @@
+﻿  CUDA_APP.cpp
+S:\WinProgs\Microsoft\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(703,5): error MSB6006: "CL.exe" exited with code 2.
+S:\_workspace\third-semester\ArchitectureSemester\CUDA_APP\CUDA_APP\CUDA_APP.cpp(2,10): fatal  error C1083: Cannot open include file: 'cuda_runtime_api.h': No such file or directory

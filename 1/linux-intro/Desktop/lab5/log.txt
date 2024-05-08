@@ -1,0 +1,101 @@
+Compiling test_my.c with -O0...
+Successful!
+Size:
+20	test_my.c.test.out.d/0-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m23.310s
+user	0m23.308s
+sys	0m0.000s
+
+Compiling test_my.c with -Os...
+Successful!
+Size:
+20	test_my.c.test.out.d/1-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m15.161s
+user	0m15.160s
+sys	0m0.000s
+
+Compiling test_my.c with -O1...
+Successful!
+Size:
+20	test_my.c.test.out.d/2-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m7.259s
+user	0m7.258s
+sys	0m0.000s
+
+Compiling test_my.c with -O2...
+Successful!
+Size:
+20	test_my.c.test.out.d/3-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m6.946s
+user	0m6.945s
+sys	0m0.000s
+
+Compiling test_my.c with -O3...
+Successful!
+Size:
+20	test_my.c.test.out.d/4-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.972s
+user	0m5.972s
+sys	0m0.000s
+
+Compiling test_my.c with -O2 -march=native...
+Successful!
+Size:
+20	test_my.c.test.out.d/5-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m6.169s
+user	0m6.168s
+sys	0m0.000s
+
+Compiling test_my.c with -O3 -march=native...
+Successful!
+Size:
+20	test_my.c.test.out.d/6-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.537s
+user	0m5.537s
+sys	0m0.000s
+
+Compiling test_my.c with -O2 -march=native -funroll-loops...
+Successful!
+Size:
+20	test_my.c.test.out.d/7-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.113s
+user	0m5.113s
+sys	0m0.000s
+
+Compiling test_my.c with -O3 -march=native -funroll-loops...
+Successful!
+Size:
+20	test_my.c.test.out.d/8-test_my.c.out
+Running time:
+sum = 1.28e+45
+
+real	0m5.159s
+user	0m5.155s
+sys	0m0.004s
+
+
+Conclusion: -O2 -march=native -funroll-loops

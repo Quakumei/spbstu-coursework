@@ -1,0 +1,5 @@
+﻿cl : command line  warning D9002: ignoring unknown option '/clr:oldSyntax'
+  bmp.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+S:\_workspace\third-semester\ArchitectureSemester\firstlab\bmpeshka\bmpeshka\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cpp(1,8): fatal  error C1190: System::Object not found, missing /clr option or missing import of standard assemblies?
+  Generating Code...

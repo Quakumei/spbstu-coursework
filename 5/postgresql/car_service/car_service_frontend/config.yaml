@@ -1,0 +1,18 @@
+credentials:
+  usernames:
+    sysadmin: # Notice that login is this line
+      email: quakumei@gmail.com
+      name: Ilya Tampio 
+      level: admin
+      password: $2b$12$ByiI4veq94h3lRJwR61wpORJPmlosVb5FjmJvjgaUeZC83drqsl2q
+    steven_hawking: # Sample operator
+      email: steven.hawking@gmail.com 
+      name: Steven Hawking
+      level: operator
+      password: $2b$12$ByiI4veq94h3lRJwR61wpORJPmlosVb5FjmJvjgaUeZC83drqsl2q
+cookie:
+  expiry_days: 7
+  key: "dfhkgjhdfkjghjdkhlakjsdhlfkjwhqwuqh" # Must be string
+  name: car_service_authenticate
+preauthorized:
+

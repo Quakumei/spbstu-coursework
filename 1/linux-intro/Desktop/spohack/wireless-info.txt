@@ -1,0 +1,490 @@
+
+########## wireless info START ##########
+
+Report from: 27 Sep 2021 19:18 MSK +0300
+
+Booted last: 27 Sep 2021 00:00 MSK +0300
+
+Script from: 25 Jan 2020 03:34 UTC +0000
+
+##### release ###########################
+
+Distributor ID:	Debian
+Description:	Debian GNU/Linux 11 (bullseye)
+Release:	11
+Codename:	bullseye
+
+##### kernel ############################
+
+Linux 5.10.0-8-amd64 #1 SMP Debian 5.10.46-4 (2021-08-03) x86_64 unknown unknown GNU/Linux
+
+Parameters: ro, quiet
+
+##### desktop ###########################
+
+awesome
+
+##### lspci #############################
+
+08:00.0 Network controller [0280]: Realtek Semiconductor Co., Ltd. RTL8723BE PCIe Wireless Network Adapter [10ec:b723]
+	DeviceName: Realtek RTL8723BE 802.11b/g/n 1x1Wi-Fi + BT4.0 Combo Adapter
+	Subsystem: Hewlett-Packard Company RTL8723BE PCIe Wireless Network Adapter [103c:804c]
+
+09:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL810xE PCI Express Fast Ethernet controller [10ec:8136] (rev 0a)
+	DeviceName: Realtek PCIe FE Family Controller
+	Subsystem: Hewlett-Packard Company RTL810xE PCI Express Fast Ethernet controller [103c:8099]
+
+##### lsusb #############################
+
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 04f2:b50d Chicony Electronics Co., Ltd HP Truevision HD
+Bus 001 Device 006: ID 09da:7c95 A4Tech Co., Ltd. USB Device
+Bus 001 Device 004: ID 2d99:0026 BY EDIFIER  EDIFIER G2 II GAMING HEADSET
+Bus 001 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+##### PCMCIA card info ##################
+
+'pccardctl' is not installed (package "pcmciautils").
+
+##### rfkill ############################
+
+./wireless-info: line 192: rfkill: command not found
+
+##### secure boot #######################
+
+SecureBoot enabled
+
+##### lsmod #############################
+
+rtl8723be             106496  0
+btcoexist             163840  1 rtl8723be
+rtl8723_common         28672  1 rtl8723be
+rtl_pci                32768  1 rtl8723be
+rtlwifi               102400  4 rtl_pci,rtl8723be,btcoexist,rtl8723_common
+mac80211              983040  3 rtl_pci,rtl8723be,rtlwifi
+wmi_bmof               16384  0
+hp_wmi                 20480  0
+sparse_keymap          16384  1 hp_wmi
+cfg80211              970752  2 rtlwifi,mac80211
+rfkill                 28672  5 hp_wmi,bluetooth,cfg80211
+libarc4                16384  1 mac80211
+wmi                    36864  2 hp_wmi,wmi_bmof
+
+##### interfaces ########################
+
+[/etc/network/interfaces]
+
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+##### ifconfig ##########################
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback <MAC address> brd <MAC address>
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether <MAC 'eno1' [IF1]> brd <MAC address>
+    altname enp9s0
+3: wlo1: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether <MAC 'wlo1' [IF2]> brd <MAC address>
+    altname wlp8s0
+
+##### iwconfig ##########################
+
+lo        no wireless extensions.
+
+eno1      no wireless extensions.
+
+wlo1      IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=off   
+          Retry short limit:7   RTS thr=2347 B   Fragment thr:off
+          Power Management:on
+          
+
+##### route #############################
+
+##### resolv.conf #######################
+
+[644 root '/etc/resolv.conf']
+
+##### network managers ##################
+
+Installed:
+
+	NetworkManager
+
+Running:
+
+root         651       1  0 19:13 ?        00:00:03 /usr/sbin/NetworkManager --no-daemon
+
+##### NetworkManager info ###############
+
+GENERAL.DEVICE:                         eno1
+GENERAL.TYPE:                           ethernet
+GENERAL.NM-TYPE:                        NMDeviceEthernet
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/2
+GENERAL.VENDOR:                         Realtek Semiconductor Co., Ltd.
+GENERAL.PRODUCT:                        RTL810xE PCI Express Fast Ethernet controller
+GENERAL.DRIVER:                         r8169
+GENERAL.DRIVER-VERSION:                 5.10.0-8-amd64
+GENERAL.FIRMWARE-VERSION:               --
+GENERAL.HWADDR:                         <MAC 'eno1' [IF1]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          20 (unavailable)
+GENERAL.REASON:                         2 (Device is now managed)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/pci0000:00/0000:00:1c.3/0000:09:00.0/net/eno1
+GENERAL.PATH:                           pci-0000:09:00.0
+GENERAL.IP-IFACE:                       --
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     100 Mb/s
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+WIRED-PROPERTIES.CARRIER:               off
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: --
+
+GENERAL.DEVICE:                         wlo1
+GENERAL.TYPE:                           wifi
+GENERAL.NM-TYPE:                        NMDeviceWifi
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/3
+GENERAL.VENDOR:                         Realtek Semiconductor Co., Ltd.
+GENERAL.PRODUCT:                        RTL8723BE PCIe Wireless Network Adapter
+GENERAL.DRIVER:                         rtl8723be
+GENERAL.DRIVER-VERSION:                 5.10.0-8-amd64
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'wlo1' [IF2]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          20 (unavailable)
+GENERAL.REASON:                         2 (Device is now managed)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/pci0000:00/0000:00:1c.2/0000:08:00.0/net/wlo1
+GENERAL.PATH:                           pci-0000:08:00.0
+GENERAL.IP-IFACE:                       --
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+CAPABILITIES.CARRIER-DETECT:            no
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     no
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+WIFI-PROPERTIES.WEP:                    yes
+WIFI-PROPERTIES.WPA:                    yes
+WIFI-PROPERTIES.WPA2:                   yes
+WIFI-PROPERTIES.TKIP:                   yes
+WIFI-PROPERTIES.CCMP:                   yes
+WIFI-PROPERTIES.AP:                     yes
+WIFI-PROPERTIES.ADHOC:                  yes
+WIFI-PROPERTIES.2GHZ:                   yes
+WIFI-PROPERTIES.5GHZ:                   no
+WIFI-PROPERTIES.MESH:                   yes
+WIFI-PROPERTIES.IBSS-RSN:               yes
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: --
+
+GENERAL.DEVICE:                         p2p-dev-wlo1
+GENERAL.TYPE:                           wifi-p2p
+GENERAL.NM-TYPE:                        NMDeviceWifiP2P
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/4
+GENERAL.VENDOR:                         --
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         (unknown)
+GENERAL.DRIVER-VERSION:                 --
+GENERAL.FIRMWARE-VERSION:               --
+GENERAL.HWADDR:                         (unknown)
+GENERAL.MTU:                            0
+GENERAL.STATE:                          20 (unavailable)
+GENERAL.REASON:                         2 (Device is now managed)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /virtual/device/placeholder/1
+GENERAL.PATH:                           --
+GENERAL.IP-IFACE:                       --
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+CAPABILITIES.CARRIER-DETECT:            no
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     no
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: --
+
+SSID  BSSID  MODE  CHAN  FREQ  RATE  SIGNAL  BARS  SECURITY  ACTIVE  IN-USE 
+
+##### NetworkManager.state ##############
+
+[main]
+NetworkingEnabled=true
+WirelessEnabled=true
+WWANEnabled=true
+
+##### NetworkManager config #############
+
+[[/etc/NetworkManager/NetworkManager.conf]]
+[main]
+plugins=ifupdown,keyfile
+[ifupdown]
+managed=false
+
+[[/usr/lib/NetworkManager/conf.d/no-mac-addr-change.conf]]
+[device-31-mac-addr-change]
+match-device=driver:eagle_sdio,driver:wl
+wifi.scan-rand-mac-address=no
+
+##### NetworkManager profiles ###########
+
+[[/etc/NetworkManager/system-connections/OnePlus 6.nmconnection]] (600 root)
+[connection] id=OnePlus 6 | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=OnePlus 6
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/AndroidAP4E3F.nmconnection]] (600 root)
+[connection] id=AndroidAP4E3F | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=AndroidAP4E3F
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/ねこ~ଲ(ⓛ ω ⓛ)ଲ~すか.nmconnection]] (600 root)
+[connection] id=ねこ~ଲ(ⓛ ω ⓛ)ଲ~すか | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=227;129;173;227;129;147;126;224;172;178;40;226;147;155;32;207;137;32;226;147;155;41;224;172;178;126;227;129;153;227;129;139;
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/GUEST.nmconnection]] (600 root)
+[connection] id=GUEST | type=wifi | autoconnect=false | permissions=
+[wifi] mac-address-blacklist= | ssid=GUEST
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/DEFENDERs.nmconnection]] (600 root)
+[connection] id=DEFENDERs | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=DEFENDERs
+[ipv4] method=auto
+[ipv6] method=auto
+
+##### Netplan config ####################
+
+##### iw reg get ########################
+
+Region: Europe/Moscow (based on set time zone)
+
+global
+country 00: DFS-UNSET
+	(2402 - 2472 @ 40), (6, 20), (N/A)
+	(2457 - 2482 @ 20), (6, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(2474 - 2494 @ 20), (6, 20), (N/A), NO-OFDM, PASSIVE-SCAN
+	(5170 - 5250 @ 80), (6, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(5250 - 5330 @ 80), (6, 20), (0 ms), DFS, AUTO-BW, PASSIVE-SCAN
+	(5490 - 5730 @ 160), (6, 20), (0 ms), DFS, PASSIVE-SCAN
+	(5735 - 5835 @ 80), (6, 20), (N/A), PASSIVE-SCAN
+	(57240 - 63720 @ 2160), (N/A, 0), (N/A)
+
+##### iwlist channels ###################
+
+lo        no frequency information.
+
+eno1      no frequency information.
+
+wlo1      13 channels in total; available frequencies :
+          Channel 01 : 2.412 GHz
+          Channel 02 : 2.417 GHz
+          Channel 03 : 2.422 GHz
+          Channel 04 : 2.427 GHz
+          Channel 05 : 2.432 GHz
+          Channel 06 : 2.437 GHz
+          Channel 07 : 2.442 GHz
+          Channel 08 : 2.447 GHz
+          Channel 09 : 2.452 GHz
+          Channel 10 : 2.457 GHz
+          Channel 11 : 2.462 GHz
+          Channel 12 : 2.467 GHz
+          Channel 13 : 2.472 GHz
+
+##### iwlist scan #######################
+
+lo        Interface doesn't support scanning.
+
+eno1      Interface doesn't support scanning.
+
+wlo1      Interface doesn't support scanning : Network is down
+
+##### module infos ######################
+
+[rtl8723be]
+filename:       /lib/modules/5.10.0-8-amd64/kernel/drivers/net/wireless/realtek/rtlwifi/rtl8723be/rtl8723be.ko
+description:    Realtek 8723BE 802.11n PCI wireless
+license:        GPL
+depends:        rtlwifi,rtl8723-common,rtl_pci,btcoexist,mac80211
+retpoline:      Y
+intree:         Y
+name:           rtl8723be
+vermagic:       5.10.0-8-amd64 SMP mod_unload modversions 
+parm:           swenc:Set to 1 for software crypto (default 0)
+parm:           ips:Set to 0 to not use link power save (default 1)
+parm:           swlps:Set to 1 to use SW control power save (default 0)
+parm:           fwlps:Set to 1 to use FW control power save (default 1)
+parm:           msi:Set to 1 to use MSI interrupts mode (default 0)
+parm:           aspm:Set to 1 to enable ASPM (default 1)
+parm:           debug_level:Set debug level (0-5) (default 0) (int)
+parm:           debug_mask:Set debug mask (default 0) (ullong)
+parm:           disable_watchdog:Set to 1 to disable the watchdog (default 0)
+parm:           ant_sel:Set to 1 or 2 to force antenna number (default 0)
+
+[rtl8723_common]
+filename:       /lib/modules/5.10.0-8-amd64/kernel/drivers/net/wireless/realtek/rtlwifi/rtl8723com/rtl8723-common.ko
+description:    Realtek RTL8723AE/RTL8723BE 802.11n PCI wireless common routines
+license:        GPL
+depends:        rtlwifi
+retpoline:      Y
+intree:         Y
+name:           rtl8723_common
+vermagic:       5.10.0-8-amd64 SMP mod_unload modversions 
+
+[rtl_pci]
+filename:       /lib/modules/5.10.0-8-amd64/kernel/drivers/net/wireless/realtek/rtlwifi/rtl_pci.ko
+description:    PCI basic driver for rtlwifi
+license:        GPL
+depends:        mac80211,rtlwifi
+retpoline:      Y
+intree:         Y
+name:           rtl_pci
+vermagic:       5.10.0-8-amd64 SMP mod_unload modversions 
+
+[rtlwifi]
+filename:       /lib/modules/5.10.0-8-amd64/kernel/drivers/net/wireless/realtek/rtlwifi/rtlwifi.ko
+description:    Realtek 802.11n PCI wireless core
+license:        GPL
+depends:        mac80211,cfg80211
+retpoline:      Y
+intree:         Y
+name:           rtlwifi
+vermagic:       5.10.0-8-amd64 SMP mod_unload modversions 
+
+[mac80211]
+filename:       /lib/modules/5.10.0-8-amd64/kernel/net/mac80211/mac80211.ko
+license:        GPL
+description:    IEEE 802.11 subsystem
+depends:        cfg80211,libarc4
+retpoline:      Y
+intree:         Y
+name:           mac80211
+vermagic:       5.10.0-8-amd64 SMP mod_unload modversions 
+parm:           minstrel_vht_only:Use only VHT rates when VHT is supported by sta. (bool)
+parm:           max_nullfunc_tries:Maximum nullfunc tx tries before disconnecting (reason 4). (int)
+parm:           max_probe_tries:Maximum probe tries before disconnecting (reason 4). (int)
+parm:           beacon_loss_count:Number of beacon intervals before we decide beacon was lost. (int)
+parm:           probe_wait_ms:Maximum time(ms) to wait for probe response before disconnecting (reason 4). (int)
+parm:           ieee80211_default_rc_algo:Default rate control algorithm for mac80211 to use (charp)
+
+[cfg80211]
+filename:       /lib/modules/5.10.0-8-amd64/kernel/net/wireless/cfg80211.ko
+description:    wireless configuration support
+license:        GPL
+depends:        rfkill
+retpoline:      Y
+intree:         Y
+name:           cfg80211
+vermagic:       5.10.0-8-amd64 SMP mod_unload modversions 
+parm:           bss_entries_limit:limit to number of scan BSS entries (per wiphy, default 1000) (int)
+parm:           ieee80211_regdom:IEEE 802.11 regulatory domain code (charp)
+parm:           cfg80211_disable_40mhz_24ghz:Disable 40MHz support in the 2.4GHz band (bool)
+
+##### module parameters #################
+
+[rtl8723be]
+ant_sel: 0
+aspm: 1
+debug_level: 0
+debug_mask: 0
+disable_watchdog: N
+fwlps: Y
+ips: Y
+msi: N
+swenc: N
+swlps: N
+
+[mac80211]
+beacon_loss_count: 7
+ieee80211_default_rc_algo: minstrel_ht
+max_nullfunc_tries: 2
+max_probe_tries: 5
+minstrel_vht_only: Y
+probe_wait_ms: 500
+
+[cfg80211]
+bss_entries_limit: 1000
+cfg80211_disable_40mhz_24ghz: N
+ieee80211_regdom: 00
+
+##### /etc/modules ######################
+
+##### modprobe options ##################
+
+##### rc.local ##########################
+
+grep: /etc/rc.local: No such file or directory
+
+##### pm-utils ##########################
+
+[/etc/pm/config.d/unload_modules] (644 root)
+SUSPEND_MODULES="$SUSPEND_MODULES rtl8723be"
+
+##### udev rules ########################
+
+##### dmesg #############################
+
+[   92.668248] rtlwifi: rtlwifi: wireless switch is on
+[   96.097365] r8169 0000:09:00.0 eno1: Link is Down
+[   97.653107] r8169 0000:09:00.0 eno1: Link is Up - 100Mbps/Full - flow control rx/tx
+[   97.653124] IPv6: ADDRCONF(NETDEV_CHANGE): eno1: link becomes ready
+[  306.643358] r8169 0000:09:00.0 eno1: Link is Down
+[  306.676798] (NULL device *): firmware: direct-loading firmware rtlwifi/rtl8723befw_36.bin
+[  306.676876] (NULL device *): firmware: direct-loading firmware regulatory.db
+[  306.676883] (NULL device *): firmware: direct-loading firmware regulatory.db.p7s
+[  307.584981] rtlwifi: rtlwifi: wireless switch is on
+[  309.603506] r8169 0000:09:00.0 eno1: Link is Down
+[  311.333777] r8169 0000:09:00.0 eno1: Link is Up - 100Mbps/Full - flow control rx/tx
+[  311.333797] IPv6: ADDRCONF(NETDEV_CHANGE): eno1: link becomes ready
+
+########## wireless info END ############
+

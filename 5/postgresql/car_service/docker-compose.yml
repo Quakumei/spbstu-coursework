@@ -1,0 +1,183 @@
+version: "3.9"
+services:
+  car_service-postgres:
+    image: postgres:14.8-alpine3.18
+    container_name: car_service-postgres
+    command:
+      - "postgres"
+      - "-c"
+      - "max_connections=50"
+      - "-c"
+      - "shared_buffers=1GB"
+      - "-c"
+      - "effective_cache_size=4GB"
+      - "-c"
+      - "work_mem=16MB"
+      - "-c"
+      - "maintenance_work_mem=512MB"
+      - "-c"
+      - "random_page_cost=1.1"
+      - "-c"
+      - "temp_file_limit=10GB"
+      - "-c"
+      - "log_min_duration_statement=200ms"
+      - "-c"
+      - "idle_in_transaction_session_timeout=10s"
+      - "-c"
+      - "lock_timeout=1s"
+      - "-c"
+      - "statement_timeout=60s"
+      - "-c"
+      - "shared_preload_libraries=pg_stat_statements"
+      - "-c"
+      - "pg_stat_statements.max=10000"
+      - "-c"
+      - "pg_stat_statements.track=all"
+      # -c logging_collector=on -c log_destination=stderr -c log_directory=/logs
+    environment:
+      POSTGRES_DB: "car_service"
+      POSTGRES_USER: "tampio"
+      POSTGRES_PASSWORD: "5130904/10002"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+      - car_service-data:/var/lib/postgresql/data
+        # ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+        # - ./logs:/logs
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tampio -d car_service"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    deploy:
+      resources:
+          limits:
+            cpus: '1'
+            memory: 4G
+    networks:
+      - postgres
+
+  car_service-pgadmin:
+    container_name: car_service-pgadmin
+    image: dpage/pgadmin4:7.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "tampio@nico.ni"
+      PGADMIN_DEFAULT_PASSWORD: "5130904/10002"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    networks:
+      - postgres
+  
+
+  car_service-prometheus:
+    container_name: car_service-prometheus
+    image: prom/prometheus
+    user: "0"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./logs/prometheus-data:/prometheus
+    restart: unless-stopped 
+    ports:
+      - 9090:9090
+    networks:
+      - postgres
+  
+  car_service-grafana:
+    container_name: car_service-grafana
+    image: grafana/grafana-enterprise
+    user: "0"
+    ports:
+      - 3000:3000
+    networks:
+      - postgres
+    restart: unless-stopped
+    volumes:
+      - ./logs/grafana:/var/lib/grafana
+
+
+  car_service-cadvisor:
+    # https://dev.to/cloudx/taming-cadvisors-high-cpu-usage-1nm5
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: car_service-cadvisor
+    privileged: true
+    ports:
+    - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    command:
+      - "--housekeeping_interval=30s"
+      - "--docker_only=true"
+      - "--disable_metrics=percpu,sched,tcp,udp,disk,diskIO,accelerator,hugetlb,referenced_memory,cpu_topology,resctrl"
+    devices:
+      - /dev/kmsg
+    networks:
+      - postgres
+    healthcheck:
+      test: wget --quiet --tries=1 --spider http://localhost:9102/healthz || exit 1
+      interval: 15s
+      timeout: 15s
+      retries: 5
+      start_period: 30s
+        #  depends_on:
+      # - ["car_service-grafana", "car_service-prometheus", "car_service-backend", "car_service-pgadmin"]
+      # car_service-frontend
+
+  car_service-frontend:
+    container_name: car_service-frontend
+    build: ./car_service_frontend
+    working_dir: /code
+    command: streamlit run app/Login.py --server.port=8501 --server.address=0.0.0.0  
+    volumes:
+      - ./car_service_frontend:/code
+      - ./car_service_frontend/secrets.toml:/code/.streamlit/secrets.toml
+      - ./car_service_frontend/config.yaml:/code/config.yaml
+    ports:
+      - 8501:8501 
+    restart: on-failure
+    networks:
+      - postgres
+
+#  postgres_exporter:
+#    container_name: pgdb-test-metrics_exporter
+#    image: prometheuscommunity/postgres-exporter:v0.10.1
+#    environment:
+#      DATA_SOURCE_URI: "postgres:5432/testdb?sslmode=disable"
+#      DATA_SOURCE_USER: "nico"
+#      DATA_SOURCE_PASS: "yazawa"
+#      PG_EXPORTER_EXTEND_QUERY_PATH: "/etc/postgres_exporter/queries.yaml"
+#    volumes:
+#      - ./queries.yaml:/etc/postgres_exporter/queries.yaml:ro
+#    ports:
+#      - "9187:9187"
+#    restart: unless-stopped
+#   deploy:
+#      resources:
+#        limits:
+#          cpus: '0.2'
+#          memory: 500M
+#    networks:
+#      - postgres
+
+volumes:
+  car_service-data:
+  pgadmin-data:
+
+networks:
+  postgres:
+    driver: bridge

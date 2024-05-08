@@ -1,0 +1,30 @@
+class FamilyPets {
+ public:
+  FamilyPets() : size_(0), capacity_(1), array_(new Pet*[1]) {}
+
+  void add(Pet* p) {
+    if (capacity_ == size_) {
+      capacity_ *= MULTIPLIER;
+      Pet** a = new Pet*[capacity_];
+      for (int i = 0; i < size_; i++) {
+        a[i] = array_[i];
+      }
+      delete[] array_;
+      array_ = a;
+    }
+    array_[size_] = p;
+    ++size_;
+  }
+
+  void voice(std::ostream& os) {
+    for (int i = 0; i < size_; i++) {
+      os « array_[i]->name() « " says " « array_[i]->voice() « '\n';
+    }
+  }
+
+ private:
+  static const int MULTIPLIER = 2;
+  int size_;
+  int capacity_;
+  Pet** array_;
+};
