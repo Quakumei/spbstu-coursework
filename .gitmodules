@@ -4,3 +4,12 @@
 [submodule "5/5/smart-lampa-cv"]
 	path = 5/5/smart-lampa-cv
 	url = https://github.com/Quakumei/smart-lampa-cv.git
+[submodule "8/ppe-watcher"]
+	path = 8/ppe-watcher
+	url = https://github.com/Quakumei/ppe-watcher
+[submodule "7/lazy-lecture"]
+	path = 7/lazy-lecture
+	url = https://github.com/quality-software-development/lazy-lecture
+[submodule "7/infosec"]
+	path = 7/infosec
+	url = git@github.com:Quakumei/infosec-seven.git
